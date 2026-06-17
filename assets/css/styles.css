@@ -283,6 +283,12 @@ em { font-style: italic; }
 /* On desktop keep a single header CTA: hide the in-menu button (it lives in the mobile drawer) */
 @media (min-width: 881px) { .nav-links > .btn { display: none; } }
 
+/* Language switcher */
+.lang-switch { display: inline-flex; align-items: center; gap: 2px; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-pill); padding: 3px; box-shadow: var(--shadow-sm); font-size: 0.8rem; font-weight: 800; }
+.lang-switch a, .lang-switch span { display: inline-grid; place-items: center; min-width: 30px; height: 26px; padding: 0 0.5em; border-radius: var(--r-pill); color: var(--text-soft); letter-spacing: 0.03em; transition: color 0.2s, background 0.2s; }
+.lang-switch .active { background: var(--sage); color: #fff; }
+.lang-switch a:hover { color: var(--clay); background: var(--cream); }
+
 .nav-toggle { display: none; width: 46px; height: 46px; border-radius: 12px; align-items: center; justify-content: center; box-shadow: inset 0 0 0 1.5px var(--line); }
 .nav-toggle span { position: relative; width: 22px; height: 2px; background: var(--sage-ink); border-radius: 2px; transition: 0.3s; }
 .nav-toggle span::before, .nav-toggle span::after { content:""; position:absolute; left:0; width:22px; height:2px; background:var(--sage-ink); border-radius:2px; transition:0.3s; }

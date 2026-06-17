@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Success Tracker to Print (A4) — Cortisol Reset</title>
+  <meta name="robots" content="noindex" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234B6B53'/%3E%3Cpath d='M16 7c5 3 7 6 7 10a7 7 0 1 1-14 0c0-4 2-7 7-10z' fill='%23D7AE63'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --sage:#6E9476; --sage-deep:#4B6B53; --ink:#2C3F31; --clay:#C76B4E;
+      --cream:#FBF6EE; --line:#D9CCB8; --muted:#6F695E; --gold:#D7AE63;
+      --font-display:"Fraunces",Georgia,serif;
+      --font-body:"Plus Jakarta Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+    }
+    *{box-sizing:border-box;margin:0;}
+    body{font-family:var(--font-body);color:var(--ink);background:#EDE6DA;line-height:1.4;padding:28px 16px 60px;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+
+    /* Screen toolbar */
+    .toolbar{max-width:794px;margin:0 auto 18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;}
+    .toolbar a{color:var(--sage-deep);font-weight:700;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;}
+    .toolbar a:hover{color:var(--clay);}
+    .btn{display:inline-flex;align-items:center;gap:.5rem;background:var(--clay);color:#fff;border:none;font:inherit;font-weight:700;padding:.7em 1.3em;border-radius:999px;cursor:pointer;box-shadow:0 12px 26px -12px rgba(199,107,78,.7);text-decoration:none;}
+    .btn:hover{background:#AE573C;}
+    .btn svg{width:1.1em;height:1.1em;}
+    .hint{max-width:794px;margin:0 auto 14px;font-size:.85rem;color:var(--muted);}
+
+    /* The A4 sheet */
+    .sheet{
+      width:794px;max-width:100%;min-height:1123px;margin:0 auto;background:#fff;
+      padding:34px 38px;box-shadow:0 30px 70px -30px rgba(0,0,0,.4);border-radius:4px;
+    }
+    .sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:3px solid var(--sage);padding-bottom:14px;margin-bottom:16px;}
+    .sheet-head .eyebrow{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);font-weight:800;}
+    .sheet-head h1{font-family:var(--font-display);font-size:1.9rem;font-weight:600;line-height:1.05;color:var(--sage-deep);margin-top:2px;}
+    .sheet-head .mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(150deg,var(--sage),var(--sage-deep));display:grid;place-items:center;flex:none;}
+    .sheet-head .mark svg{width:26px;height:26px;}
+
+    .meta-row{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:16px;}
+    .meta-row .f{flex:1;min-width:150px;font-size:.78rem;}
+    .meta-row .f b{display:block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
+    .meta-row .f .ln{border-bottom:1.5px dotted var(--line);height:20px;}
+
+    .why{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.8rem;}
+    .why b{color:var(--clay);}
+    .why .ln{border-bottom:1.5px dotted var(--line);height:18px;margin-top:6px;}
+
+    table{width:100%;border-collapse:collapse;font-size:.74rem;}
+    th,td{border:1px solid var(--line);text-align:center;}
+    thead th{background:var(--sage-deep);color:#fff;font-weight:700;font-size:.62rem;letter-spacing:.02em;text-transform:uppercase;padding:7px 3px;line-height:1.15;}
+    thead th.day,thead th.date{width:30px;}
+    tbody td{height:23px;padding:0;}
+    tbody td.day{background:var(--cream);font-weight:800;color:var(--sage-deep);width:30px;}
+    tbody td.date{width:52px;}
+    tbody tr:nth-child(7n) td{border-bottom:2px solid var(--sage);}
+    .box{display:inline-block;width:13px;height:13px;border:1.5px solid var(--sage);border-radius:3px;vertical-align:middle;}
+    .mood{font-size:.7rem;color:var(--muted);letter-spacing:1px;}
+
+    .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:.72rem;color:var(--muted);}
+    .legend span{display:inline-flex;align-items:center;gap:6px;}
+    .legend .box{width:11px;height:11px;}
+
+    .footer-note{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-top:16px;flex-wrap:wrap;}
+    .reward{flex:1;min-width:220px;background:linear-gradient(150deg,#FBF1E8,#F4DFD3);border:1px solid var(--line);border-radius:10px;padding:10px 14px;font-size:.78rem;}
+    .reward b{color:var(--clay);}
+    .reward .ln{border-bottom:1.5px dotted #cdbba6;height:18px;margin-top:6px;}
+    .brandline{font-family:var(--font-display);font-style:italic;color:var(--sage-deep);font-size:1rem;text-align:right;}
+    .brandline small{display:block;font-family:var(--font-body);font-style:normal;font-size:.66rem;color:var(--muted);letter-spacing:.06em;}
+
+    /* PRINT */
+    @page{size:A4;margin:10mm;}
+    @media print{
+      body{background:#fff;padding:0;}
+      .toolbar,.hint{display:none !important;}
+      .sheet{width:auto;min-height:auto;margin:0;padding:0;box-shadow:none;border-radius:0;}
+      table{font-size:.72rem;}
+    }
+    @media (max-width:640px){
+      .sheet{padding:20px 16px;}
+      table{font-size:.62rem;}
+      .sheet-head h1{font-size:1.4rem;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <a href="index.html">&larr; Back to site</a>
+    <button class="btn" onclick="window.print()">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M6 9V3h12v6M6 18H4v-5h16v5h-2M8 14h8v7H8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+      Print tracker
+    </button>
+  </div>
+  <p class="hint">Tip: In the print dialog choose <strong>A4</strong> format and enable &ldquo;Print background colours&rdquo; so the coloured headings stay. The page is designed to fit on a single sheet.</p>
+
+  <div class="sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="eyebrow">28-day Cortisol Reset</div>
+        <h1>My success tracker</h1>
+      </div>
+      <div class="mark" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 2.5 6 5 6 8.5A6 6 0 1 1 6 11.5C6 8 8 5.5 12 3z" fill="#fff"/></svg>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="f"><b>Name</b><div class="ln"></div></div>
+      <div class="f"><b>Start date</b><div class="ln"></div></div>
+      <div class="f"><b>Target weight / feeling</b><div class="ln"></div></div>
+    </div>
+
+    <div class="why"><b>My &ldquo;why&rdquo;:</b> what am I doing this for and how do I want to feel in 28 days?<div class="ln"></div></div>
+
+    <table>
+      <thead>
+        <tr>
+          <th class="day">Day</th>
+          <th class="date">Date</th>
+          <th>Sleep<br>7h+</th>
+          <th>2 l<br>water</th>
+          <th>Move</th>
+          <th>Calm /<br>breath</th>
+          <th>Meal<br>as planned</th>
+          <th>No<br>sugar</th>
+          <th>Mood<br>1–5</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+
+    <div class="legend">
+      <span><span class="box"></span> Done = tick the box</span>
+      <span><span class="box" style="border-bottom:2px solid var(--sage)"></span> Bold line = end of week, sum up your progress</span>
+      <span>Mood: 1 = exhausted · 5 = full of energy</span>
+    </div>
+
+    <div class="footer-note">
+      <div class="reward"><b>End-of-week reward:</b> how will I treat myself for sticking with it?<div class="ln"></div></div>
+      <div class="brandline">You've got this. Day by day.<small>KORTIZOLRESET.CZ · HANA MAŠÍNOVÁ</small></div>
+    </div>
+  </div>
+
+  <script>
+    // Generate 28 day rows
+    (function(){
+      var rows = '';
+      for (var d = 1; d <= 28; d++) {
+        rows += '<tr>' +
+          '<td class="day">' + d + '</td>' +
+          '<td class="date"></td>' +
+          '<td><span class="box"></span></td>' +
+          '<td><span class="box"></span></td>' +
+          '<td><span class="box"></span></td>' +
+          '<td><span class="box"></span></td>' +
+          '<td><span class="box"></span></td>' +
+          '<td><span class="box"></span></td>' +
+          '<td class="mood">_____</td>' +
+        '</tr>';
+      }
+      document.getElementById('rows').innerHTML = rows;
+    })();
+  </script>
+</body>
+</html>

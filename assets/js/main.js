@@ -114,6 +114,26 @@
   /* ----- Order modal (lead capture) ------------------------------------ */
   /* Po spuštění napoj formulář na svou platební bránu / nástroj
      (FAPI, SimpleShop, Stripe, Shoptet…) — viz README.md.            */
+  var LANG = (doc.documentElement.getAttribute('lang') || 'cs').toLowerCase().slice(0, 2);
+  var STR = {
+    cs: {
+      close: 'Zavřít', step: 'Poslední krok', title: 'Rezervuj si místo v Kortizol Resetu',
+      intro: 'Vyplň jméno a e-mail. Pošleme ti pokyny k platbě a po zaplacení získáš okamžitý přístup + 3 bonusy zdarma.',
+      name: 'Jméno', namePh: 'Tvoje jméno', email: 'E-mail', emailPh: 'tvuj@email.cz',
+      submit: 'Závazně si rezervovat místo', safe: '🔒 Tvé údaje jsou v bezpečí. Žádný spam.',
+      doneTitle: 'Hotovo! Máš rezervováno 🎉',
+      doneText: 'Zkontroluj e-mail — posíláme ti pokyny k platbě. Těším se na tebe v programu!<br><br><em style="font-size:.85rem">(Demo: formulář napoj na svou platební bránu — viz README.)</em>'
+    },
+    en: {
+      close: 'Close', step: 'Last step', title: 'Reserve your spot in Cortisol Reset',
+      intro: 'Enter your name and email. We\'ll send payment instructions and you\'ll get instant access + 3 free bonuses after payment.',
+      name: 'Name', namePh: 'Your name', email: 'Email', emailPh: 'you@email.com',
+      submit: 'Reserve my spot', safe: '🔒 Your details are safe. No spam.',
+      doneTitle: 'Done! Your spot is reserved 🎉',
+      doneText: 'Check your email — we\'re sending payment instructions. See you in the program!<br><br><em style="font-size:.85rem">(Demo: connect this form to your payment gateway — see README.)</em>'
+    }
+  };
+  var L = STR[LANG] || STR.cs;
   var modal = null;
   function buildModal() {
     if (modal) return modal;
@@ -125,23 +145,23 @@
     modal.innerHTML =
       '<div class="kr-modal__backdrop" data-close></div>' +
       '<div class="kr-modal__card">' +
-        '<button class="kr-modal__close" data-close aria-label="Zavřít">&times;</button>' +
+        '<button class="kr-modal__close" data-close aria-label="' + L.close + '">&times;</button>' +
         '<div class="kr-modal__view" data-view="form">' +
-          '<span class="eyebrow">Poslední krok</span>' +
-          '<h3 id="krModalTitle">Rezervuj si místo v Kortizol Resetu</h3>' +
-          '<p style="color:var(--text-soft);margin:.4rem 0 1.2rem">Vyplň jméno a e-mail. Pošleme ti pokyny k platbě a po zaplacení získáš okamžitý přístup + 3 bonusy zdarma.</p>' +
+          '<span class="eyebrow">' + L.step + '</span>' +
+          '<h3 id="krModalTitle">' + L.title + '</h3>' +
+          '<p style="color:var(--text-soft);margin:.4rem 0 1.2rem">' + L.intro + '</p>' +
           '<form id="krForm" novalidate>' +
-            '<label class="kr-field"><span>Jméno</span><input type="text" name="name" required autocomplete="given-name" placeholder="Tvoje jméno"></label>' +
-            '<label class="kr-field"><span>E-mail</span><input type="email" name="email" required autocomplete="email" placeholder="tvuj@email.cz"></label>' +
-            '<button type="submit" class="btn btn--big btn--block">Závazně si rezervovat místo</button>' +
-            '<p class="btn-note center">🔒 Tvé údaje jsou v bezpečí. Žádný spam.</p>' +
+            '<label class="kr-field"><span>' + L.name + '</span><input type="text" name="name" required autocomplete="given-name" placeholder="' + L.namePh + '"></label>' +
+            '<label class="kr-field"><span>' + L.email + '</span><input type="email" name="email" required autocomplete="email" placeholder="' + L.emailPh + '"></label>' +
+            '<button type="submit" class="btn btn--big btn--block">' + L.submit + '</button>' +
+            '<p class="btn-note center">' + L.safe + '</p>' +
           '</form>' +
         '</div>' +
         '<div class="kr-modal__view" data-view="done" hidden>' +
           '<div class="kr-done-ic" aria-hidden="true">✓</div>' +
-          '<h3>Hotovo! Máš rezervováno 🎉</h3>' +
-          '<p style="color:var(--text-soft);margin-top:.5rem">Zkontroluj e-mail — posíláme ti pokyny k platbě. Těším se na tebe v programu!<br><br><em style="font-size:.85rem">(Demo: formulář napoj na svou platební bránu — viz README.)</em></p>' +
-          '<button class="btn btn--ghost" data-close style="margin-top:1.2rem">Zavřít</button>' +
+          '<h3>' + L.doneTitle + '</h3>' +
+          '<p style="color:var(--text-soft);margin-top:.5rem">' + L.doneText + '</p>' +
+          '<button class="btn btn--ghost" data-close style="margin-top:1.2rem">' + L.close + '</button>' +
         '</div>' +
       '</div>';
     body.appendChild(modal);

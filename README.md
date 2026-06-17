@@ -14,13 +14,26 @@ s expertkou **Hanou Mašínovou**. Postaveno jako čisté HTML + CSS + JavaScrip
 
 ```
 kortizolreset.cz/
-├── index.html          – hlavní prodejní stránka
+├── index.html          – hlavní prodejní stránka (čeština, výchozí)
 ├── tracker.html        – tisknutelná A4 tabulka úspěchů (28 dní)
+├── en/
+│   ├── index.html      – anglická verze (/en/)
+│   └── tracker.html    – anglická A4 tabulka
 ├── assets/
-│   ├── css/styles.css   – kompletní design (barvy, typografie, responsivita)
-│   └── js/main.js       – menu, odpočet, modal, animace
+│   ├── css/styles.css   – kompletní design (sdílený oběma jazyky)
+│   └── js/main.js       – menu, odpočet, modal, animace (texty modalu dvojjazyčně)
 └── README.md
 ```
+
+## 🌍 Jazykové verze (CZ + EN)
+
+Web je dvojjazyčný, postavený podle SEO/GEO best practice — **každý jazyk má vlastní indexovatelnou URL**, ne JS přepínač:
+- **Čeština** = výchozí, na rootu `/`
+- **Angličtina** = `/en/`
+- Stránky jsou propojené `hreflang` (`cs`, `en`, `x-default`) a přepínačem **CZ / EN** v hlavičce.
+- Sdílí jeden `styles.css` a `main.js`; texty objednávkového modalu se v JS přepínají podle `lang` v `<html>`.
+
+> ⚠️ **Při úpravách textů mysli na obě verze** — když změníš nabídku/cenu/texty v `index.html`, uprav i `en/index.html` (a naopak), ať se obsah nerozejde.
 
 ## ▶️ Jak web spustit
 

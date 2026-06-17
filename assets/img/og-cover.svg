@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Kortizol Reset — 28denní program">
+  <defs>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6E9476"/><stop offset="1" stop-color="#4B6B53"/>
+    </linearGradient>
+    <radialGradient id="blob1" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#F4DFD3"/><stop offset="1" stop-color="#FBF6EE" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#6E9476" stop-opacity="0.22"/><stop offset="1" stop-color="#FBF6EE" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#FBF6EE"/>
+  <circle cx="1080" cy="120" r="360" fill="url(#blob1)"/>
+  <circle cx="120" cy="610" r="300" fill="url(#blob2)"/>
+
+  <!-- brand row -->
+  <g transform="translate(80 70)">
+    <rect width="64" height="64" rx="16" fill="url(#mark)"/>
+    <path d="M32 16c10 6 14 12 14 20a14 14 0 1 1-28 0c0-8 4-14 14-20z" fill="#D7AE63"/>
+    <text x="84" y="30" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700" fill="#2C3F31">Kortizol Reset</text>
+    <text x="84" y="55" font-family="Arial, Helvetica, sans-serif" font-size="16" letter-spacing="3" fill="#C76B4E">S&#160;HANOU&#160;MAŠÍNOVOU</text>
+  </g>
+
+  <!-- headline -->
+  <text x="80" y="300" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="4" fill="#4B6B53">28DENNÍ ONLINE PROGRAM</text>
+  <text x="78" y="380" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="700" fill="#2C3F31">Resetuj svůj</text>
+  <text x="78" y="460" font-family="Georgia, 'Times New Roman', serif" font-size="76" font-weight="700" font-style="italic" fill="#C76B4E">kortizol.</text>
+  <text x="80" y="520" font-family="Arial, Helvetica, sans-serif" font-size="27" fill="#6F695E">Vrať si energii, klid a rovnováhu — bez drastických diet.</text>
+
+  <!-- rating badge -->
+  <g transform="translate(980 470)">
+    <circle cx="60" cy="60" r="84" fill="#fff"/>
+    <circle cx="60" cy="60" r="84" fill="none" stroke="#D7AE63" stroke-width="6"/>
+    <text x="60" y="58" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#C76B4E">4,9</text>
+    <text x="60" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#6F695E">★★★★★</text>
+  </g>
+</svg>

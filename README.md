@@ -104,6 +104,19 @@ Odpočet 24 h je „evergreen" — každému návštěvníkovi běží vlastní 
 
 ---
 
+## 🔎 SEO / GEO soubory
+
+- `robots.txt` – povoluje běžné i AI crawlery (GPTBot, ClaudeBot, PerplexityBot, Google-Extended…) + odkaz na sitemapu
+- `sitemap.xml` – obě jazykové verze s `hreflang`
+- `manifest.webmanifest` + `assets/img/logo.svg` – PWA (ikona, barvy, „přidat na plochu")
+- `llms.txt` – shrnutí webu pro AI/LLM (GEO – ať tě AI enginy správně pochopí a citují)
+- `404.html` – branded chybová stránka
+- Strukturovaná data: `Course`, `FAQPage`, **`Organization` + `Person`** (E-E-A-T – autorita Hany Mašínové)
+- **Render/výkon:** obsah je viditelný i bez JavaScriptu (animace se spouští jen když JS běží) → lepší LCP a spolehlivá indexace pro vyhledávače i AI
+
+### OG sdílecí obrázek
+Připravená brandovaná šablona `assets/img/og-cover.svg` (1200×630). Pro náhledy při sdílení na sítích ji vyexportuj do PNG/JPG (jakýkoli online konvertor) jako `assets/img/og-cover.jpg` a v `index.html` i `en/index.html` přepiš `og:image` na `https://kortizolreset.cz/assets/img/og-cover.jpg`. (Teď `og:image` ukazuje na funkční fotku z Unsplash, takže sdílení funguje i bez exportu.)
+
 ## ✅ Co web umí (přehled)
 
 - Plně **responzivní** (mobil, tablet, desktop) + mobilní menu a spodní lišta s CTA

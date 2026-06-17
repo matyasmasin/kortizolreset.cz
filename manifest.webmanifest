@@ -1,0 +1,15 @@
+{
+  "name": "Kortizol Reset",
+  "short_name": "Kortizol Reset",
+  "description": "28denní program pro klid, energii a hormonální rovnováhu — bez drastických diet.",
+  "lang": "cs",
+  "dir": "ltr",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#FBF6EE",
+  "theme_color": "#4B6B53",
+  "icons": [
+    { "src": "assets/img/logo.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}

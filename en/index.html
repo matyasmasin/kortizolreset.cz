@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FBF6EE" />
+  <script>document.documentElement.classList.add('js');</script>
 
   <title>Cortisol Reset — 28-Day Program for Calm, Energy &amp; Hormonal Balance | Hana Mašínová</title>
   <meta name="description" content="A 28-day Cortisol Reset for exhausted women. Recipes, daily tips, a motivation calendar and a printable success tracker. Get your energy, sleep and calm back — without crash diets. Free bonuses when you order within 24 hours." />
@@ -26,8 +27,10 @@
   <meta name="twitter:title" content="Cortisol Reset — get your energy, calm and balance back in 28 days" />
   <meta name="twitter:description" content="A program for exhausted women. Recipes, daily tips, a motivation calendar and a printable success tracker." />
 
-  <!-- Favicon (inline SVG) -->
+  <!-- Favicon & PWA -->
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234B6B53'/%3E%3Cpath d='M16 7c5 3 7 6 7 10a7 7 0 1 1-14 0c0-4 2-7 7-10z' fill='%23D7AE63'/%3E%3C/svg%3E" />
+  <link rel="icon" type="image/svg+xml" href="../assets/img/logo.svg" />
+  <link rel="manifest" href="../manifest.webmanifest" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -75,6 +78,31 @@
       { "@type": "Question", "name": "What if it doesn't work for me?", "acceptedAnswer": { "@type": "Answer", "text": "You have a 14-day money-back guarantee. If you go through the program honestly and you're not satisfied, we'll refund the full amount." } },
       { "@type": "Question", "name": "Do I have to follow a strict diet?", "acceptedAnswer": { "@type": "Answer", "text": "No. Cortisol Reset isn't a diet. It's about simple daily habits and tasty recipes that calm the nervous system and support hormonal balance." } }
     ]
+  }
+  </script>
+  <!-- Structured data: Organization + Person (E-E-A-T / GEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Cortisol Reset",
+    "url": "https://kortizolreset.cz/",
+    "email": "info@kortizolreset.cz",
+    "logo": "https://kortizolreset.cz/assets/img/logo.svg",
+    "areaServed": "CZ",
+    "founder": { "@type": "Person", "name": "Hana Mašínová" },
+    "knowsAbout": ["cortisol", "hormonal balance", "nutrition", "sleep", "stress", "weight loss"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Hana Mašínová",
+    "jobTitle": "Certified nutrition advisor",
+    "knowsAbout": ["lowering cortisol", "women's hormonal balance", "nutrition coaching"],
+    "alumniOf": { "@type": "EducationalOrganization", "name": "Dexter Academy" },
+    "worksFor": { "@type": "Organization", "name": "Cortisol Reset" }
   }
   </script>
 </head>
@@ -151,7 +179,7 @@
 
         <div class="hero-visual reveal" data-delay="2">
           <div class="hero-photo photo">
-            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1100&auto=format&fit=crop" alt="A woman doing calm morning yoga by the water" loading="eager" onerror="this.classList.add('img-failed')" />
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1100&auto=format&fit=crop" alt="A woman doing calm morning yoga by the water" loading="eager" fetchpriority="high" decoding="async" onerror="this.classList.add('img-failed')" />
           </div>
           <div class="hero-float">Lower your <b>cortisol</b> and your body finally starts cooperating.</div>
           <div class="hero-badge">

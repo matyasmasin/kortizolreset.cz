@@ -122,6 +122,86 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizol-a-bricho.html"/>
   </url>
 
+  <!-- Článek: kortizol a spánek -->
+  <url>
+    <loc>https://kortizolreset.cz/blog/kortizol-a-spanek.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/kortizol-a-spanek.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/cortisol-and-sleep.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizol-a-spanek.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/en/blog/cortisol-and-sleep.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/kortizol-a-spanek.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/cortisol-and-sleep.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizol-a-spanek.html"/>
+  </url>
+
+  <!-- Článek: adrenální únava -->
+  <url>
+    <loc>https://kortizolreset.cz/blog/adrenalni-unava.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/adrenalni-unava.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/adrenal-fatigue.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/adrenalni-unava.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/en/blog/adrenal-fatigue.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/adrenalni-unava.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/adrenal-fatigue.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/adrenalni-unava.html"/>
+  </url>
+
+  <!-- Článek: potraviny snižující kortizol -->
+  <url>
+    <loc>https://kortizolreset.cz/blog/potraviny-snizujici-kortizol.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/potraviny-snizujici-kortizol.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/foods-that-lower-cortisol.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/potraviny-snizujici-kortizol.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/en/blog/foods-that-lower-cortisol.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/potraviny-snizujici-kortizol.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/foods-that-lower-cortisol.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/potraviny-snizujici-kortizol.html"/>
+  </url>
+
+  <!-- Článek: kortizol v menopauze -->
+  <url>
+    <loc>https://kortizolreset.cz/blog/kortizol-v-menopauze.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/kortizol-v-menopauze.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/cortisol-in-menopause.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizol-v-menopauze.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/en/blog/cortisol-in-menopause.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/kortizol-v-menopauze.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/cortisol-in-menopause.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizol-v-menopauze.html"/>
+  </url>
+
   <!-- Právní stránky -->
   <url>
     <loc>https://kortizolreset.cz/obchodni-podminky.html</loc>

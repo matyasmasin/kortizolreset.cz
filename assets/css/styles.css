@@ -749,3 +749,37 @@ body.nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .text-clay { color: var(--clay); }
 .hide-mobile { }
 @media (max-width: 560px) { .hide-mobile { display: none !important; } }
+
+/* -------------------------------------------------------------------------
+   27. Blog
+   ------------------------------------------------------------------------- */
+.legal-top { background: var(--white); border-bottom: 1px solid var(--line); }
+.legal-top .container { display: flex; align-items: center; justify-content: space-between; padding-block: 1rem; gap: 1rem; flex-wrap: wrap; }
+.post-wrap { max-width: 760px; margin: 0 auto; padding: clamp(2rem,5vw,3.5rem) 0 4rem; }
+.crumbs { font-size: var(--step--1); color: var(--text-soft); margin-bottom: 1rem; }
+.crumbs a { color: var(--sage-deep); font-weight: 600; }
+.post-head .eyebrow { margin-bottom: 0.6rem; }
+.post-head h1 { font-size: var(--step-4); margin: 0.2rem 0 0.6rem; }
+.post-meta { color: var(--text-soft); font-size: var(--step--1); margin-bottom: 1.8rem; }
+.post-body { font-size: var(--step-0); }
+.post-body h2 { font-size: var(--step-2); margin: 2rem 0 0.6rem; }
+.post-body h3 { font-size: var(--step-1); margin: 1.4rem 0 0.4rem; }
+.post-body p { margin: 0.8rem 0; color: var(--ink); }
+.post-body ul, .post-body ol { padding-left: 1.3rem; display: grid; gap: 0.45rem; margin: 0.9rem 0; color: var(--ink); }
+.post-body ul { list-style: disc; }
+.post-body ol { list-style: decimal; }
+.post-body li { padding-left: 0.2rem; }
+.post-body strong { color: var(--sage-deep); }
+.post-body blockquote { border-left: 4px solid var(--sage); background: var(--cream-deep); padding: 0.9rem 1.2rem; border-radius: 0 12px 12px 0; margin: 1.3rem 0; font-family: var(--font-display); font-size: var(--step-1); color: var(--sage-ink); }
+.post-cta { margin-top: 2.4rem; background: linear-gradient(160deg, var(--sage-deep), var(--sage)); color: #fff; border-radius: var(--r-lg); padding: clamp(1.5rem,3vw,2.2rem); text-align: center; }
+.post-cta h3 { color: #fff; font-size: var(--step-2); margin-bottom: 0.4rem; }
+.post-cta p { color: #E7F0E8; margin-bottom: 1.1rem; }
+.post-disclaimer { margin-top: 1.6rem; font-size: 0.8rem; color: var(--text-soft); border-top: 1px solid var(--line); padding-top: 1rem; }
+/* Blog index */
+.post-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.3rem; }
+.post-card { display: flex; flex-direction: column; background: var(--white); border: 1px solid var(--line); border-radius: var(--r); padding: 1.4rem; box-shadow: var(--shadow-sm); transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+.post-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); }
+.post-card .tag { align-self: flex-start; font-size: 0.66rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage-deep); background: rgba(110,148,118,0.14); padding: 0.3em 0.7em; border-radius: var(--r-pill); margin-bottom: 0.7rem; }
+.post-card h3 { font-size: var(--step-1); margin-bottom: 0.4rem; }
+.post-card p { color: var(--text-soft); font-size: var(--step--1); flex: 1; }
+.post-card .rd { color: var(--clay); font-weight: 700; font-size: var(--step--1); margin-top: 0.8rem; }

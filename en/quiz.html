@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#FBF6EE" />
+  <title>Cortisol Quiz: How High Is Your Cortisol? (2 min) | Cortisol Reset</title>
+  <meta name="description" content="Take this 2-minute quiz to find out how high your cortisol probably is. 7 questions, instant result and tailored tips. Free." />
+  <link rel="canonical" href="https://kortizolreset.cz/en/quiz.html" />
+  <link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/kviz.html" />
+  <link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/quiz.html" />
+  <link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/kviz.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="en_GB" />
+  <meta property="og:title" content="Cortisol Quiz: How High Is Your Cortisol? (2 min)" />
+  <meta property="og:description" content="7 questions, an instant result and tailored tips. Find out if your body is stuck on high alert." />
+  <meta property="og:url" content="https://kortizolreset.cz/en/quiz.html" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234B6B53'/%3E%3Cpath d='M16 7c5 3 7 6 7 10a7 7 0 1 1-14 0c0-4 2-7 7-10z' fill='%23D7AE63'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..600;1,9..144,400..600&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  <style>
+    .quiz-wrap{max-width:640px;margin:0 auto;padding:clamp(1.5rem,5vw,3rem) 0 4rem;}
+    .quiz-head{text-align:center;margin-bottom:1.4rem;}
+    .quiz-head h1{font-size:var(--step-3);}
+    .quiz-head p{color:var(--text-soft);margin-top:.5rem;}
+    .quiz-card{background:var(--white);border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--shadow);padding:clamp(1.4rem,4vw,2.4rem);}
+    .q-progress{height:6px;border-radius:99px;background:var(--cream-deep);margin-bottom:1.5rem;overflow:hidden;}
+    .q-progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--sage),var(--clay));transition:width .4s var(--ease);}
+    .q-step{font-size:var(--step--1);color:var(--text-soft);font-weight:700;margin-bottom:.5rem;}
+    .q-question{font-family:var(--font-display);font-size:var(--step-2);color:var(--sage-ink);margin-bottom:1.3rem;line-height:1.15;}
+    .q-opts{display:grid;gap:.6rem;}
+    .q-opt{display:flex;align-items:center;gap:.7rem;text-align:left;background:var(--cream);border:1.5px solid var(--line);border-radius:var(--r);padding:.85em 1.1em;font:inherit;font-weight:600;color:var(--sage-ink);cursor:pointer;transition:.2s;}
+    .q-opt:hover{border-color:var(--sage);background:#fff;transform:translateY(-1px);}
+    .q-opt .dot{width:18px;height:18px;border-radius:50%;border:2px solid var(--sage);flex:none;}
+    .q-intro{text-align:center;}
+    .q-intro p{color:var(--text-soft);margin:.4rem 0 1.4rem;}
+    .q-result{text-align:center;}
+    .q-badge{font-size:2.6rem;line-height:1;}
+    .q-tier{font-family:var(--font-display);font-size:var(--step-3);margin:.4rem 0 .2rem;}
+    .q-meter{height:12px;border-radius:99px;background:var(--cream-deep);overflow:hidden;margin:1.1rem 0;}
+    .q-meter i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#6E9476,#D7AE63,#C76B4E);transition:width .8s var(--ease);}
+    .q-msg{color:var(--text-soft);margin-bottom:1.2rem;}
+    .q-email{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:1.2rem 0 .4rem;}
+    .q-email input{flex:1;min-width:200px;padding:.85em 1em;border:1.5px solid var(--line);border-radius:var(--r-sm);font:inherit;background:var(--cream);}
+    .q-email input:focus{outline:none;border-color:var(--sage);box-shadow:var(--ring);background:#fff;}
+    .q-ok{color:var(--sage-deep);font-weight:700;}
+    .q-disc{font-size:.78rem;color:var(--text-soft);margin-top:1.4rem;border-top:1px solid var(--line);padding-top:1rem;text-align:left;}
+  </style>
+</head>
+<body>
+  <header class="legal-top">
+    <div class="container">
+      <a href="index.html" class="brand" aria-label="Cortisol Reset – home">
+        <span class="mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 2.5 6 5 6 8.5A6 6 0 1 1 6 11.5C6 8 8 5.5 12 3z" fill="currentColor"/></svg></span>
+        <span>Cortisol Reset<small>with Hana Mašínová</small></span>
+      </a>
+      <a href="index.html" class="btn btn--ghost" style="padding:.6em 1.2em">← Back to site</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="quiz-wrap">
+      <div class="quiz-head">
+        <span class="eyebrow" style="justify-content:center">Free quiz · 2 minutes</span>
+        <h1>How high is your cortisol?</h1>
+        <p>7 quick questions about how you feel. At the end you'll get an indicative result and what to do about it.</p>
+      </div>
+
+      <div class="quiz-card">
+        <div class="q-progress" aria-hidden="true"><i id="qbar"></i></div>
+        <div id="qstage"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom" style="border:none;padding-top:0">
+        <span>© <span id="year">2026</span> Cortisol Reset · Hana Mašínová</span>
+        <span><a href="index.html">Home</a> · <a href="index.html#cena">Programme</a></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function(){
+    var Q = [
+      'Do you wake up tired, even after a “full” night\'s sleep?',
+      'Does fat cling to your belly even though you eat sensibly?',
+      'Can\'t you switch your head off and fall asleep at night?',
+      'Do sugar or salt cravings hit you in the afternoon?',
+      'Do you run on coffee and sugar just to function?',
+      'Are your mood and patience on a rollercoaster?',
+      'Do you often feel stressed or “permanently on the go”?'
+    ];
+    var OPTS = [['Never',0],['Sometimes',1],['Often',2]];
+    var stage = document.getElementById('qstage');
+    var bar = document.getElementById('qbar');
+    var i = 0, score = 0, total = Q.length;
+    var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+    function setBar(p){ bar.style.width = p + '%'; }
+
+    function intro(){
+      setBar(0);
+      stage.innerHTML =
+        '<div class="q-intro">' +
+        '<div class="q-badge" aria-hidden="true">🌿</div>' +
+        '<p>Answer honestly based on the last few weeks. Nothing is stored anywhere without your consent.</p>' +
+        '<button class="btn btn--big" id="qstart">Start the quiz</button>' +
+        '</div>';
+      document.getElementById('qstart').addEventListener('click', function(){ i=0; score=0; render(); });
+    }
+
+    function render(){
+      setBar(Math.round((i/total)*100));
+      var opts = OPTS.map(function(o){
+        return '<button class="q-opt" data-v="'+o[1]+'"><span class="dot" aria-hidden="true"></span>'+o[0]+'</button>';
+      }).join('');
+      stage.innerHTML =
+        '<div class="q-step">Question '+(i+1)+' of '+total+'</div>' +
+        '<div class="q-question">'+Q[i]+'</div>' +
+        '<div class="q-opts">'+opts+'</div>';
+      [].forEach.call(stage.querySelectorAll('.q-opt'), function(b){
+        b.addEventListener('click', function(){
+          score += parseInt(b.getAttribute('data-v'),10);
+          i++;
+          if (i < total) render(); else result();
+        });
+      });
+    }
+
+    function result(){
+      setBar(100);
+      var pct = Math.round((score/(total*2))*100);
+      var tier, badge, msg;
+      if (score <= 4){
+        badge='🌿'; tier='Mostly calm';
+        msg='Your answers suggest your cortisol is fairly well in check. A few extra habits will help you keep your energy and calm even in busier times.';
+      } else if (score <= 9){
+        badge='⚠️'; tier='Raised cortisol';
+        msg='Several signals suggest your body is often on alert. It\'s the perfect time to add simple calming steps — which is exactly what the 28-day Cortisol Reset is for.';
+      } else {
+        badge='🔴'; tier='High cortisol';
+        msg='Your body is likely stuck on high alert. You deserve a reset — Cortisol Reset gives you a clear, step-by-step plan to get your energy and calm back.';
+      }
+      stage.innerHTML =
+        '<div class="q-result">' +
+        '<div class="q-badge" aria-hidden="true">'+badge+'</div>' +
+        '<div class="q-tier">'+tier+'</div>' +
+        '<div class="q-meter" aria-hidden="true"><i id="qm"></i></div>' +
+        '<p class="q-msg">'+msg+'</p>' +
+        '<form id="qform" novalidate>' +
+          '<p style="font-weight:700;color:var(--sage-ink);margin-bottom:.3rem">I\'ll send you detailed results + 5 tailored tips</p>' +
+          '<div class="q-email"><input type="email" name="email" placeholder="you@email.com" autocomplete="email" required><button class="btn" type="submit">Send</button></div>' +
+        '</form>' +
+        '<a href="index.html#cena" class="btn btn--big btn--block" style="margin-top:.6rem">I\'m in — Cortisol Reset</a>' +
+        '<p class="q-disc">This quiz is <strong>indicative only</strong> and does not replace a medical diagnosis. Only a doctor can reliably measure your cortisol. If your symptoms are persistent or severe, please speak to your doctor.</p>' +
+        '</div>';
+      setTimeout(function(){ var m=document.getElementById('qm'); if(m) m.style.width = Math.max(8,pct) + '%'; }, 80);
+      var f = document.getElementById('qform');
+      f.addEventListener('submit', function(e){
+        e.preventDefault();
+        var email = f.email.value.trim();
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ f.email.focus(); return; }
+        /* === Hook up e-mail capture here (Ecomail / Mailchimp / SmartEmailing) === */
+        f.outerHTML = '<p class="q-ok">Thank you! 💌 Your detailed results and tips are on their way to your inbox.</p>';
+      });
+    }
+
+    intro();
+  })();
+  </script>
+</body>
+</html>

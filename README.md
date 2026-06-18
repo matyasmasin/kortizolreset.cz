@@ -104,6 +104,27 @@ Odpočet 24 h je „evergreen" — každému návštěvníkovi běží vlastní 
 
 ---
 
+## 🚀 Nasazení na WEDOS (FTP)
+
+Web je statický → na WEDOS NoLimit hosting stačí nahrát soubory do webového kořene domény. DNS `kortizolreset.cz` už míří na WEDOS (A → 185.8.237.22), takže po nahrání bude web na doméně živý.
+
+### Varianta A — automaticky z gitu (doporučeno)
+Připravený GitHub Action `.github/workflows/deploy.yml` nahraje web po každém pushi.
+1. Ve WEDOSu zjisti FTP údaje (Webhosting → FTP účty): **server, login, heslo** + cestu k webovému kořeni (např. `/www/domains/kortizolreset.cz/`).
+2. Na GitHubu: **Settings → Secrets and variables → Actions → New repository secret** přidej:
+   - `FTP_SERVER` (např. `ftp.kortizolreset.cz`)
+   - `FTP_USERNAME`
+   - `FTP_PASSWORD`
+   - `FTP_SERVER_DIR` (web. kořen, např. `/www/domains/kortizolreset.cz/`)
+3. V `deploy.yml` odkomentuj blok `push:` (nebo napiš a udělám to za tebe).
+4. Od teď se každý push sám nahraje na WEDOS.
+
+### Varianta B — ručně přes FTP
+Nahraj obsah složky (kromě `.github/`, `.claude/`, `README.md`, `.git`) do webového kořene domény přes FileZilla nebo správce souborů ve WEDOSu.
+
+### `.htaccess`
+V repu je `.htaccess` (vynucení HTTPS, www → bez www, vlastní 404, cache, komprese) — nahraje se do kořene s ostatními soubory.
+
 ## 🔎 SEO / GEO soubory
 
 - `robots.txt` – povoluje běžné i AI crawlery (GPTBot, ClaudeBot, PerplexityBot, Google-Extended…) + odkaz na sitemapu

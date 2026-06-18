@@ -202,6 +202,26 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizol-v-menopauze.html"/>
   </url>
 
+  <!-- Článek: kortizolový koktejl (trend) -->
+  <url>
+    <loc>https://kortizolreset.cz/blog/kortizolovy-koktejl.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/kortizolovy-koktejl.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/cortisol-cocktail.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizolovy-koktejl.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/en/blog/cortisol-cocktail.html</loc>
+    <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/blog/kortizolovy-koktejl.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/blog/cortisol-cocktail.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizolovy-koktejl.html"/>
+  </url>
+
   <!-- Právní stránky -->
   <url>
     <loc>https://kortizolreset.cz/obchodni-podminky.html</loc>

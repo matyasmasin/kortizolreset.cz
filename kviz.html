@@ -4,16 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#FBF6EE" />
-  <title>Kortizol test: Jak vysoko máš kortizol? (2 min) | Kortizol Reset</title>
-  <meta name="description" content="Udělej si 2minutový test a zjisti, jak vysoko máš pravděpodobně kortizol. 7 otázek, okamžitý výsledek a tipy na míru. Zdarma." />
+  <title>Kortizol test: jaký je tvůj kortizolový typ? (2 min) | Kortizol Reset</title>
+  <meta name="description" content="Udělej si 2minutový test a zjisti svůj kortizolový typ a míru zátěže. 8 otázek, výsledek na míru, 28denní plán a slevový kód. Zdarma." />
   <link rel="canonical" href="https://kortizolreset.cz/kviz.html" />
   <link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/kviz.html" />
   <link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/quiz.html" />
   <link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/kviz.html" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="cs_CZ" />
-  <meta property="og:title" content="Kortizol test: Jak vysoko máš kortizol? (2 min)" />
-  <meta property="og:description" content="7 otázek, okamžitý výsledek a tipy na míru. Zjisti, jestli tvé tělo nejede na poplach." />
+  <meta property="og:title" content="Kortizol test: jaký je tvůj kortizolový typ? (2 min)" />
+  <meta property="og:description" content="8 otázek, výsledek na míru, 28denní plán a slevový kód. Zjisti svůj kortizolový typ." />
   <meta property="og:url" content="https://kortizolreset.cz/kviz.html" />
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%234B6B53'/%3E%3Cpath d='M16 7c5 3 7 6 7 10a7 7 0 1 1-14 0c0-4 2-7 7-10z' fill='%23D7AE63'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -38,14 +38,21 @@
     .q-intro p{color:var(--text-soft);margin:.4rem 0 1.4rem;}
     .q-result{text-align:center;}
     .q-badge{font-size:2.6rem;line-height:1;}
-    .q-tier{font-family:var(--font-display);font-size:var(--step-3);margin:.4rem 0 .2rem;}
-    .q-meter{height:12px;border-radius:99px;background:var(--cream-deep);overflow:hidden;margin:1.1rem 0;}
+    .q-tier{font-family:var(--font-display);font-size:var(--step-3);margin:.4rem 0 .1rem;}
+    .q-sub{color:var(--text-soft);font-weight:700;font-size:var(--step--1);margin-bottom:.3rem;}
+    .q-meter{height:12px;border-radius:99px;background:var(--cream-deep);overflow:hidden;margin:1rem 0 .4rem;}
     .q-meter i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,#6E9476,#D7AE63,#C76B4E);transition:width .8s var(--ease);}
-    .q-msg{color:var(--text-soft);margin-bottom:1.2rem;}
-    .q-email{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:1.2rem 0 .4rem;}
+    .q-msg{color:var(--text-soft);margin:.8rem 0 1rem;}
+    .q-plan{text-align:left;background:var(--cream);border:1px solid var(--line);border-radius:var(--r);padding:1rem 1.2rem;margin:1rem 0;}
+    .q-plan b{display:block;color:var(--sage-deep);margin-bottom:.5rem;}
+    .q-plan ul{display:grid;gap:.45rem;}
+    .q-plan li{display:flex;gap:.6rem;align-items:flex-start;font-size:var(--step--1);color:var(--sage-ink);}
+    .q-plan li::before{content:"✓";color:var(--sage);font-weight:800;}
+    .q-email{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;margin:1.1rem 0 .3rem;}
     .q-email input{flex:1;min-width:200px;padding:.85em 1em;border:1.5px solid var(--line);border-radius:var(--r-sm);font:inherit;background:var(--cream);}
     .q-email input:focus{outline:none;border-color:var(--sage);box-shadow:var(--ring);background:#fff;}
-    .q-ok{color:var(--sage-deep);font-weight:700;}
+    .q-discount{background:var(--blush);border-radius:var(--r);padding:.9rem 1.1rem;margin:.6rem 0;font-weight:700;color:var(--clay-deep);}
+    .q-discount b{font-family:var(--font-display);letter-spacing:.05em;}
     .q-disc{font-size:.78rem;color:var(--text-soft);margin-top:1.4rem;border-top:1px solid var(--line);padding-top:1rem;text-align:left;}
   </style>
 </head>
@@ -64,8 +71,8 @@
     <div class="quiz-wrap">
       <div class="quiz-head">
         <span class="eyebrow" style="justify-content:center">Test zdarma · 2 minuty</span>
-        <h1>Jak vysoko máš kortizol?</h1>
-        <p>7 rychlých otázek o tom, jak se cítíš. Na konci se dozvíš orientační výsledek a co s tím.</p>
+        <h1>Jaký je tvůj kortizolový typ?</h1>
+        <p>8 rychlých otázek. Na konci se dozvíš svůj typ, míru zátěže a 28denní plán na míru.</p>
       </div>
 
       <div class="quiz-card">
@@ -79,84 +86,93 @@
     <div class="container">
       <div class="footer-bottom" style="border:none;padding-top:0">
         <span>© <span id="year">2026</span> Kortizol Reset · Hana Mašínová</span>
-        <span><a href="index.html">Domů</a> · <a href="index.html#cena">Program</a></span>
+        <span><a href="index.html">Domů</a> · <a href="index.html#cena">Program</a> · <a href="blog/">Blog</a></span>
       </div>
     </div>
   </footer>
 
   <script>
   (function(){
+    // each Q: [text, category]
     var Q = [
-      'Probouzíš se unavená, i když jsi „prospala" celou noc?',
-      'Drží se ti tuk hlavně kolem břicha, i když jíš rozumně?',
-      'Nemůžeš večer „vypnout hlavu" a usnout?',
-      'Přepadají tě odpoledne chutě na sladké nebo slané?',
-      'Jedeš přes den na kávě a cukru, abys vůbec fungovala?',
-      'Je tvoje nálada a trpělivost na horské dráze?',
-      'Cítíš se často ve stresu nebo „v jednom kole"?'
+      ['Budíš se v noci, často kolem 3 ráno?','spanek'],
+      ['Nemůžeš večer „vypnout hlavu" a usnout?','spanek'],
+      ['Cítíš se často ve stresu nebo „v jednom kole"?','napeti'],
+      ['Bývá tvoje nálada a trpělivost na horské dráze?','napeti'],
+      ['Probouzíš se unavená, i když jsi spala dost?','energie'],
+      ['Jedeš přes den na kávě, abys vůbec fungovala?','energie'],
+      ['Přepadají tě odpoledne chutě na sladké nebo slané?','chute'],
+      ['Drží se ti tuk hlavně kolem břicha, i když jíš rozumně?','chute']
     ];
     var OPTS = [['Nikdy',0],['Občas',1],['Často',2]];
+    var TYPES = {
+      spanek:{badge:'🌙',name:'Nevyspalá',sub:'Tvůj typ: kortizol večer dost neklesá',
+        msg:'Tvoje odpovědi ukazují, že tělo se večer těžko zklidňuje a spánek není, co bývával. Když srovnáš kortizolovou křivku, vrátí se i hlubší spánek.',
+        plan:['Večerní rutina a ztlumení světla 60 minut před spaním','Ranní světlo na nastavení kortizolové křivky','Stabilní večeře s bílkovinou proti buzení v noci']},
+      napeti:{badge:'⚡',name:'Přetížená',sub:'Tvůj typ: tělo je často v pohotovosti',
+        msg:'Tvoje odpovědi ukazují „pořád ve střehu". Tělo nestíhá vypnout poplach. Pár minut zklidnění denně dokáže hladinu kortizolu reálně srazit.',
+        plan:['2minutové dechové pauzy během dne','Pohyb, který zklidňuje (chůze), ne vyčerpává','Mikro-návyky na „vypnutí poplachu"']},
+      energie:{badge:'🔋',name:'Vyčerpaná',sub:'Tvůj typ: energie je vybitá zdola',
+        msg:'Tvoje odpovědi ukazují hlubokou únavu, na kterou káva přestává stačit. Tělo volá po regeneraci a stabilním palivu, ne po dalším zátahu.',
+        plan:['Snídaně s bílkovinou hned po ránu','Šetrný pohyb plus dostatek regenerace','Konec odpoledních propadů energie']},
+      chute:{badge:'🍫',name:'Rozkolísaná',sub:'Tvůj typ: houpe se ti cukr v krvi',
+        msg:'Tvoje odpovědi ukazují na rozkolísaný cukr v krvi a chutě, které „síla vůle" neporazí. Stabilní talíř je tvoje největší páka.',
+        plan:['Bílkovina ke každému jídlu','Pravidelnost místo hladovění a nájezdů na cukr','Talíř, po kterém ti neklesne energie']}
+    };
+    var ORDER = ['spanek','napeti','energie','chute'];
+
     var stage = document.getElementById('qstage');
     var bar = document.getElementById('qbar');
-    var i = 0, score = 0, total = Q.length;
+    var i = 0, total = Q.length;
+    var cat = {spanek:0,napeti:0,energie:0,chute:0};
     var y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
-
     function setBar(p){ bar.style.width = p + '%'; }
 
     function intro(){
       setBar(0);
       stage.innerHTML =
-        '<div class="q-intro">' +
-        '<div class="q-badge" aria-hidden="true">🌿</div>' +
+        '<div class="q-intro"><div class="q-badge" aria-hidden="true">🌿</div>' +
         '<p>Odpovídej upřímně podle posledních pár týdnů. Nic se nikam neukládá bez tvého svolení.</p>' +
-        '<button class="btn btn--big" id="qstart">Začít test</button>' +
-        '</div>';
-      document.getElementById('qstart').addEventListener('click', function(){ i=0; score=0; render(); });
+        '<button class="btn btn--big" id="qstart">Zjistit svůj typ</button></div>';
+      document.getElementById('qstart').addEventListener('click', function(){ i=0; cat={spanek:0,napeti:0,energie:0,chute:0}; render(); });
     }
-
     function render(){
       setBar(Math.round((i/total)*100));
-      var opts = OPTS.map(function(o,idx){
-        return '<button class="q-opt" data-v="'+o[1]+'"><span class="dot" aria-hidden="true"></span>'+o[0]+'</button>';
-      }).join('');
-      stage.innerHTML =
-        '<div class="q-step">Otázka '+(i+1)+' z '+total+'</div>' +
-        '<div class="q-question">'+Q[i]+'</div>' +
-        '<div class="q-opts">'+opts+'</div>';
+      var opts = OPTS.map(function(o){ return '<button class="q-opt" data-v="'+o[1]+'"><span class="dot" aria-hidden="true"></span>'+o[0]+'</button>'; }).join('');
+      stage.innerHTML = '<div class="q-step">Otázka '+(i+1)+' z '+total+'</div>' +
+        '<div class="q-question">'+Q[i][0]+'</div><div class="q-opts">'+opts+'</div>';
       [].forEach.call(stage.querySelectorAll('.q-opt'), function(b){
         b.addEventListener('click', function(){
-          score += parseInt(b.getAttribute('data-v'),10);
-          i++;
-          if (i < total) render(); else result();
+          cat[Q[i][1]] += parseInt(b.getAttribute('data-v'),10);
+          i++; if (i<total) render(); else result();
         });
       });
     }
-
     function result(){
       setBar(100);
-      var pct = Math.round((score/(total*2))*100);
-      var tier, badge, msg;
-      if (score <= 4){
-        badge='🌿'; tier='Spíš v klidu';
-        msg='Tvé odpovědi naznačují, že kortizol máš zatím docela pod kontrolou. Pár návyků navíc ti pomůže udržet energii a klid i v náročnějším období.';
-      } else if (score <= 9){
-        badge='⚠️'; tier='Zvýšený kortizol';
-        msg='Několik signálů ukazuje, že tvé tělo je často v pohotovosti. Je ideální čas zařadit jednoduché kroky na zklidnění — přesně na to je 28denní Kortizol Reset.';
-      } else {
-        badge='🔴'; tier='Vysoký kortizol';
-        msg='Tvé tělo nejspíš jede dlouhodobě na poplach. Zasloužíš si reset — Kortizol Reset ti dá jasný plán krok za krokem, jak se vrátit k energii a klidu.';
-      }
+      var totalScore = cat.spanek+cat.napeti+cat.energie+cat.chute;
+      var pct = Math.round((totalScore/(total*2))*100);
+      // dominant category (first in ORDER wins ties)
+      var top = ORDER[0];
+      ORDER.forEach(function(c){ if (cat[c] > cat[top]) top = c; });
+      var t = TYPES[top];
+      var zatez = pct < 33 ? 'nízká' : (pct < 66 ? 'střední' : 'vysoká');
+      var planLis = t.plan.map(function(p){ return '<li>'+p+'</li>'; }).join('');
       stage.innerHTML =
         '<div class="q-result">' +
-        '<div class="q-badge" aria-hidden="true">'+badge+'</div>' +
-        '<div class="q-tier">'+tier+'</div>' +
+        '<div class="q-badge" aria-hidden="true">'+t.badge+'</div>' +
+        '<div class="q-tier">'+t.name+'</div>' +
+        '<div class="q-sub">'+t.sub+'</div>' +
         '<div class="q-meter" aria-hidden="true"><i id="qm"></i></div>' +
-        '<p class="q-msg">'+msg+'</p>' +
+        '<div class="q-sub">Míra zátěže: '+zatez+'</div>' +
+        '<p class="q-msg">'+t.msg+'</p>' +
+        '<div class="q-plan"><b>Tvůj 28denní plán — priority:</b><ul>'+planLis+'</ul></div>' +
         '<form id="qform" novalidate>' +
-          '<p style="font-weight:700;color:var(--sage-ink);margin-bottom:.3rem">Pošlu ti podrobné výsledky + 5 tipů na míru</p>' +
+          '<p style="font-weight:700;color:var(--sage-ink);margin-bottom:.3rem">Pošlu ti podrobný výsledek + plán na míru</p>' +
           '<div class="q-email"><input type="email" name="email" placeholder="tvuj@email.cz" autocomplete="email" required><button class="btn" type="submit">Poslat</button></div>' +
         '</form>' +
-        '<a href="index.html#cena" class="btn btn--big btn--block" style="margin-top:.6rem">Chci do toho jít — Kortizol Reset</a>' +
+        '<div id="qafter"></div>' +
+        '<a href="index.html#cena" class="btn btn--big btn--block" style="margin-top:.6rem">Chci Kortizol Reset</a>' +
         '<p class="q-disc">Tento test je <strong>orientační</strong> a nenahrazuje lékařskou diagnózu. Hladinu kortizolu spolehlivě určí jen lékař. Při dlouhodobých nebo výrazných potížích se prosím poraď se svým lékařem.</p>' +
         '</div>';
       setTimeout(function(){ var m=document.getElementById('qm'); if(m) m.style.width = Math.max(8,pct) + '%'; }, 80);
@@ -166,10 +182,12 @@
         var email = f.email.value.trim();
         if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ f.email.focus(); return; }
         /* === Sem napoj sběr e-mailů (Ecomail / Mailchimp / SmartEmailing) === */
-        f.outerHTML = '<p class="q-ok">Díky! 💌 Podrobné výsledky a tipy ti posílám na e-mail.</p>';
+        f.style.display='none';
+        document.getElementById('qafter').innerHTML =
+          '<p style="color:var(--sage-deep);font-weight:700">Díky! 💌 Výsledek a plán ti posílám na e-mail.</p>' +
+          '<div class="q-discount">🎁 Bonus za vyplnění: kód <b>RESET10</b> na <b>−10 %</b> na Kortizol Reset.</div>';
       });
     }
-
     intro();
   })();
   </script>

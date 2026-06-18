@@ -783,3 +783,9 @@ body.nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .post-card h3 { font-size: var(--step-1); margin-bottom: 0.4rem; }
 .post-card p { color: var(--text-soft); font-size: var(--step--1); flex: 1; }
 .post-card .rd { color: var(--clay); font-weight: 700; font-size: var(--step--1); margin-top: 0.8rem; }
+/* GEO answer capsule */
+.answer-box { background: var(--blush); border-left: 4px solid var(--clay); border-radius: 0 14px 14px 0; padding: 1rem 1.3rem; margin: 0 0 1.7rem; font-size: var(--step-0); }
+.answer-box strong { color: var(--clay-deep); }
+.answer-box p { margin: 0.3rem 0 0; color: var(--sage-ink); }
+.post-body .faq { margin: 1rem 0 0; }
+.post-body .faq-item summary { font-size: var(--step-1); }

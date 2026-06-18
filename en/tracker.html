@@ -30,25 +30,33 @@
 
     /* The A4 sheet */
     .sheet{
+      position:relative; overflow:hidden;
       width:794px;max-width:100%;min-height:1123px;margin:0 auto;background:#fff;
       padding:34px 38px;box-shadow:0 30px 70px -30px rgba(0,0,0,.4);border-radius:4px;
     }
-    .sheet-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;border-bottom:3px solid var(--sage);padding-bottom:14px;margin-bottom:16px;}
-    .sheet-head .eyebrow{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--clay);font-weight:800;}
-    .sheet-head h1{font-family:var(--font-display);font-size:1.9rem;font-weight:600;line-height:1.05;color:var(--sage-deep);margin-top:2px;}
-    .sheet-head .mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(150deg,var(--sage),var(--sage-deep));display:grid;place-items:center;flex:none;}
-    .sheet-head .mark svg{width:26px;height:26px;}
+    .sheet-inner{position:relative;z-index:1;}
+    .watermark{position:absolute;inset:0;display:grid;place-items:center;z-index:0;pointer-events:none;}
+    .watermark svg{width:72%;max-width:470px;opacity:.05;}
+
+    .sheet-head{display:flex;justify-content:space-between;align-items:center;gap:16px;border-bottom:3px solid var(--sage);padding-bottom:14px;margin-bottom:14px;}
+    .brandlock{display:flex;align-items:center;gap:11px;}
+    .brandlock .mark{width:46px;height:46px;border-radius:12px;background:linear-gradient(150deg,var(--sage),var(--sage-deep));display:grid;place-items:center;flex:none;}
+    .brandlock .mark svg{width:26px;height:26px;}
+    .brandlock .bn{font-family:var(--font-display);font-size:1.3rem;font-weight:700;color:var(--sage-deep);line-height:1;}
+    .brandlock .bn small{display:block;font-family:var(--font-body);font-size:.56rem;font-weight:800;letter-spacing:.18em;color:var(--clay);margin-top:4px;}
+    .eyebrow-r{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:800;text-align:right;line-height:1.5;}
+    .doc-title{font-family:var(--font-display);font-size:1.75rem;font-weight:600;color:var(--ink);margin:2px 0 14px;}
 
     .meta-row{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:16px;}
     .meta-row .f{flex:1;min-width:150px;font-size:.78rem;}
     .meta-row .f b{display:block;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:3px;}
     .meta-row .f .ln{border-bottom:1.5px dotted var(--line);height:20px;}
 
-    .why{background:var(--cream);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.8rem;}
+    .why{background:rgba(251,246,238,.85);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:.8rem;}
     .why b{color:var(--clay);}
     .why .ln{border-bottom:1.5px dotted var(--line);height:18px;margin-top:6px;}
 
-    table{width:100%;border-collapse:collapse;font-size:.74rem;}
+    table{width:100%;border-collapse:collapse;font-size:.74rem;background:rgba(255,255,255,.6);}
     th,td{border:1px solid var(--line);text-align:center;}
     thead th{background:var(--sage-deep);color:#fff;font-weight:700;font-size:.62rem;letter-spacing:.02em;text-transform:uppercase;padding:7px 3px;line-height:1.15;}
     thead th.day,thead th.date{width:30px;}
@@ -56,7 +64,7 @@
     tbody td.day{background:var(--cream);font-weight:800;color:var(--sage-deep);width:30px;}
     tbody td.date{width:52px;}
     tbody tr:nth-child(7n) td{border-bottom:2px solid var(--sage);}
-    .box{display:inline-block;width:13px;height:13px;border:1.5px solid var(--sage);border-radius:3px;vertical-align:middle;}
+    .box{display:inline-block;width:13px;height:13px;border:1.5px solid var(--sage);border-radius:3px;vertical-align:middle;background:#fff;}
     .mood{font-size:.7rem;color:var(--muted);letter-spacing:1px;}
 
     .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:14px;font-size:.72rem;color:var(--muted);}
@@ -81,7 +89,8 @@
     @media (max-width:640px){
       .sheet{padding:20px 16px;}
       table{font-size:.62rem;}
-      .sheet-head h1{font-size:1.4rem;}
+      .doc-title{font-size:1.4rem;}
+      .brandlock .bn{font-size:1.1rem;}
     }
   </style>
 </head>
@@ -94,53 +103,62 @@
       Print tracker
     </button>
   </div>
-  <p class="hint">Tip: In the print dialog choose <strong>A4</strong> format and enable &ldquo;Print background colours&rdquo; so the coloured headings stay. The page is designed to fit on a single sheet.</p>
+  <p class="hint">Tip: In the print dialog choose <strong>A4</strong> and enable &ldquo;Print background colours&rdquo; so the coloured headings and logo stay. The page is designed to fit on a single sheet.</p>
 
   <div class="sheet">
-    <div class="sheet-head">
-      <div>
-        <div class="eyebrow">28-day Cortisol Reset</div>
-        <h1>My success tracker</h1>
+    <!-- faint watermark (logo) -->
+    <div class="watermark" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 2.5 6 5 6 8.5A6 6 0 1 1 6 11.5C6 8 8 5.5 12 3z" fill="#4B6B53"/></svg>
+    </div>
+
+    <div class="sheet-inner">
+      <div class="sheet-head">
+        <div class="brandlock">
+          <span class="mark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 2.5 6 5 6 8.5A6 6 0 1 1 6 11.5C6 8 8 5.5 12 3z" fill="#D7AE63"/></svg>
+          </span>
+          <span class="bn">Cortisol&nbsp;Reset<small>WITH HANA MAŠÍNOVÁ</small></span>
+        </div>
+        <div class="eyebrow-r">28-day program<br>success tracker</div>
       </div>
-      <div class="mark" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none"><path d="M12 3c4 2.5 6 5 6 8.5A6 6 0 1 1 6 11.5C6 8 8 5.5 12 3z" fill="#fff"/></svg>
+
+      <h1 class="doc-title">My success tracker</h1>
+
+      <div class="meta-row">
+        <div class="f"><b>Name</b><div class="ln"></div></div>
+        <div class="f"><b>Start date</b><div class="ln"></div></div>
+        <div class="f"><b>Target weight / feeling</b><div class="ln"></div></div>
       </div>
-    </div>
 
-    <div class="meta-row">
-      <div class="f"><b>Name</b><div class="ln"></div></div>
-      <div class="f"><b>Start date</b><div class="ln"></div></div>
-      <div class="f"><b>Target weight / feeling</b><div class="ln"></div></div>
-    </div>
+      <div class="why"><b>My &ldquo;why&rdquo;:</b> what am I doing this for and how do I want to feel in 28 days?<div class="ln"></div></div>
 
-    <div class="why"><b>My &ldquo;why&rdquo;:</b> what am I doing this for and how do I want to feel in 28 days?<div class="ln"></div></div>
+      <table>
+        <thead>
+          <tr>
+            <th class="day">Day</th>
+            <th class="date">Date</th>
+            <th>Sleep<br>7h+</th>
+            <th>2 l<br>water</th>
+            <th>Move</th>
+            <th>Calm /<br>breath</th>
+            <th>Meal<br>as planned</th>
+            <th>No<br>sugar</th>
+            <th>Mood<br>1–5</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
 
-    <table>
-      <thead>
-        <tr>
-          <th class="day">Day</th>
-          <th class="date">Date</th>
-          <th>Sleep<br>7h+</th>
-          <th>2 l<br>water</th>
-          <th>Move</th>
-          <th>Calm /<br>breath</th>
-          <th>Meal<br>as planned</th>
-          <th>No<br>sugar</th>
-          <th>Mood<br>1–5</th>
-        </tr>
-      </thead>
-      <tbody id="rows"></tbody>
-    </table>
+      <div class="legend">
+        <span><span class="box"></span> Done = tick the box</span>
+        <span><span class="box" style="border-bottom:2px solid var(--sage)"></span> Bold line = end of week, sum up your progress</span>
+        <span>Mood: 1 = exhausted · 5 = full of energy</span>
+      </div>
 
-    <div class="legend">
-      <span><span class="box"></span> Done = tick the box</span>
-      <span><span class="box" style="border-bottom:2px solid var(--sage)"></span> Bold line = end of week, sum up your progress</span>
-      <span>Mood: 1 = exhausted · 5 = full of energy</span>
-    </div>
-
-    <div class="footer-note">
-      <div class="reward"><b>End-of-week reward:</b> how will I treat myself for sticking with it?<div class="ln"></div></div>
-      <div class="brandline">You've got this. Day by day.<small>KORTIZOLRESET.CZ · HANA MAŠÍNOVÁ</small></div>
+      <div class="footer-note">
+        <div class="reward"><b>End-of-week reward:</b> how will I treat myself for sticking with it?<div class="ln"></div></div>
+        <div class="brandline">You've got this. Day by day.<small>KORTIZOLRESET.CZ · HANA MAŠÍNOVÁ</small></div>
+      </div>
     </div>
   </div>
 

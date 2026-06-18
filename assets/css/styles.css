@@ -727,6 +727,23 @@ body.nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 @keyframes krFade { from { opacity: 0; } to { opacity: 1; } }
 @keyframes krPop { from { opacity: 0; transform: translateY(20px) scale(0.97); } to { opacity: 1; transform: none; } }
 
+/* Payment modal */
+.kr-modal__card.kr-pay { width: min(540px, 100%); }
+.kr-pay__sub { color: var(--text-soft); margin: 0.3rem 0 1.1rem; }
+.pay-grid { display: grid; grid-template-columns: auto 1fr; gap: 1.1rem; align-items: center; }
+@media (max-width: 480px) { .pay-grid { grid-template-columns: 1fr; justify-items: center; } }
+.pay-qr { text-align: center; flex: none; }
+.pay-qr img, .pay-qr__soon { width: 170px; height: 170px; border-radius: 14px; border: 1px solid var(--line); background: #fff; }
+.pay-qr__soon { display: none; place-items: center; text-align: center; color: var(--text-soft); font-size: 0.8rem; font-weight: 700; line-height: 1.4; }
+.pay-qr small { display: block; margin-top: 0.45rem; color: var(--text-soft); font-size: 0.72rem; }
+.pay-rows { display: grid; gap: 0.5rem; width: 100%; }
+.pay-row { display: flex; flex-direction: column; gap: 2px; background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 0.5rem 0.75rem; }
+.pay-row span { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-soft); font-weight: 800; }
+.pay-row b { color: var(--sage-ink); font-size: 0.95rem; word-break: break-word; }
+.pay-steps { counter-reset: s; display: grid; gap: 0.55rem; margin: 1.2rem 0 0.5rem; padding: 0; list-style: none; }
+.pay-steps li { position: relative; padding-left: 2rem; color: var(--text-soft); font-size: var(--step--1); line-height: 1.5; }
+.pay-steps li::before { counter-increment: s; content: counter(s); position: absolute; left: 0; top: 0; width: 1.4rem; height: 1.4rem; border-radius: 50%; background: var(--sage); color: #fff; font-weight: 800; font-size: 0.75rem; display: grid; place-items: center; }
+
 /* Helpers */
 .mt-0 { margin-top: 0; }
 .text-clay { color: var(--clay); }

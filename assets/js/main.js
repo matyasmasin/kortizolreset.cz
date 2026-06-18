@@ -111,29 +111,43 @@
   }
   if (counters.length) { tickCountdown(); setInterval(tickCountdown, 1000); }
 
-  /* ----- Order modal (lead capture) ------------------------------------ */
-  /* Po spuštění napoj formulář na svou platební bránu / nástroj
-     (FAPI, SimpleShop, Stripe, Shoptet…) — viz README.md.            */
+  /* ----- Order / payment modal ----------------------------------------- */
   var LANG = (doc.documentElement.getAttribute('lang') || 'cs').toLowerCase().slice(0, 2);
-  var STR = {
-    cs: {
-      close: 'Zavřít', step: 'Poslední krok', title: 'Rezervuj si místo v Kortizol Resetu',
-      intro: 'Vyplň jméno a e-mail. Pošleme ti pokyny k platbě a po zaplacení získáš okamžitý přístup + 3 bonusy zdarma.',
-      name: 'Jméno', namePh: 'Tvoje jméno', email: 'E-mail', emailPh: 'tvuj@email.cz',
-      submit: 'Závazně si rezervovat místo', safe: '🔒 Tvé údaje jsou v bezpečí. Žádný spam.',
-      doneTitle: 'Hotovo! Máš rezervováno 🎉',
-      doneText: 'Zkontroluj e-mail — posíláme ti pokyny k platbě. Těším se na tebe v programu!<br><br><em style="font-size:.85rem">(Demo: formulář napoj na svou platební bránu — viz README.)</em>'
-    },
-    en: {
-      close: 'Close', step: 'Last step', title: 'Reserve your spot in Cortisol Reset',
-      intro: 'Enter your name and email. We\'ll send payment instructions and you\'ll get instant access + 3 free bonuses after payment.',
-      name: 'Name', namePh: 'Your name', email: 'Email', emailPh: 'you@email.com',
-      submit: 'Reserve my spot', safe: '🔒 Your details are safe. No spam.',
-      doneTitle: 'Done! Your spot is reserved 🎉',
-      doneText: 'Check your email — we\'re sending payment instructions. See you in the program!<br><br><em style="font-size:.85rem">(Demo: connect this form to your payment gateway — see README.)</em>'
-    }
+  var EN = LANG === 'en';
+
+  /* === PLATEBNÍ ÚDAJE — DOPLŇ po dodání čísla účtu ===
+     account: číslo účtu (např. 123456789/0100)
+     iban:    IBAN (např. CZ65 0800 0000 1920 0014 5399)
+     qr:      vygenerovaný QR (assets/img/qr-platba.svg) — viz README   */
+  var PAY = {
+    account: '[DOPLŇ ČÍSLO ÚČTU]',
+    iban:    '[DOPLŇ IBAN]',
+    amountCs: '1 290 Kč',
+    amountEn: '€49',
+    qr: (EN ? '../assets/img/' : 'assets/img/') + 'qr-platba.svg'
   };
-  var L = STR[LANG] || STR.cs;
+
+  var T = EN ? {
+    eyebrow: 'Order · payment', title: 'Pay and get access',
+    sub: 'The complete Cortisol Reset — <b>' + PAY.amountEn + '</b>, one-off.',
+    scan: 'Scan in your banking app', qrSoon: 'QR code<br>(coming soon)',
+    account: 'Account', iban: 'IBAN', amount: 'Amount', msg: 'Payment message', msgVal: 'your e-mail',
+    s1: 'Pay by QR code or bank transfer to the account above.',
+    s2: 'Put your <b>e-mail</b> in the payment message (so we know where to send access).',
+    s3: 'Once the payment arrives, we send your access + 3 bonuses within 24 h.',
+    note: '🔒 Secure bank payment · 14-day money-back guarantee', close: 'Close'
+  } : {
+    eyebrow: 'Objednávka · platba', title: 'Zaplať a máš přístup',
+    sub: 'Kompletní Kortizol Reset — <b>' + PAY.amountCs + '</b> jednorázově.',
+    scan: 'Naskenuj v bankovní aplikaci', qrSoon: 'QR platba<br>(brzy doplníme)',
+    account: 'Číslo účtu', iban: 'IBAN', amount: 'Částka', msg: 'Zpráva pro příjemce', msgVal: 'tvůj e-mail',
+    s1: 'Zaplať QR kódem nebo převodem na účet výše.',
+    s2: 'Do zprávy pro příjemce napiš svůj <b>e-mail</b> (ať víme, kam poslat přístup).',
+    s3: 'Po připsání platby ti do 24 h pošleme přístup + 3 bonusy.',
+    note: '🔒 Bezpečná platba převodem · 14denní garance vrácení peněz', close: 'Zavřít'
+  };
+  var amount = EN ? PAY.amountEn : PAY.amountCs;
+
   var modal = null;
   function buildModal() {
     if (modal) return modal;
@@ -141,46 +155,33 @@
     modal.className = 'kr-modal';
     modal.setAttribute('role', 'dialog');
     modal.setAttribute('aria-modal', 'true');
-    modal.setAttribute('aria-labelledby', 'krModalTitle');
+    modal.setAttribute('aria-labelledby', 'payTitle');
     modal.innerHTML =
       '<div class="kr-modal__backdrop" data-close></div>' +
-      '<div class="kr-modal__card">' +
-        '<button class="kr-modal__close" data-close aria-label="' + L.close + '">&times;</button>' +
-        '<div class="kr-modal__view" data-view="form">' +
-          '<span class="eyebrow">' + L.step + '</span>' +
-          '<h3 id="krModalTitle">' + L.title + '</h3>' +
-          '<p style="color:var(--text-soft);margin:.4rem 0 1.2rem">' + L.intro + '</p>' +
-          '<form id="krForm" novalidate>' +
-            '<label class="kr-field"><span>' + L.name + '</span><input type="text" name="name" required autocomplete="given-name" placeholder="' + L.namePh + '"></label>' +
-            '<label class="kr-field"><span>' + L.email + '</span><input type="email" name="email" required autocomplete="email" placeholder="' + L.emailPh + '"></label>' +
-            '<button type="submit" class="btn btn--big btn--block">' + L.submit + '</button>' +
-            '<p class="btn-note center">' + L.safe + '</p>' +
-          '</form>' +
+      '<div class="kr-modal__card kr-pay">' +
+        '<button class="kr-modal__close" data-close aria-label="' + T.close + '">&times;</button>' +
+        '<span class="eyebrow">' + T.eyebrow + '</span>' +
+        '<h3 id="payTitle">' + T.title + '</h3>' +
+        '<p class="kr-pay__sub">' + T.sub + '</p>' +
+        '<div class="pay-grid">' +
+          '<div class="pay-qr">' +
+            '<img src="' + PAY.qr + '" alt="QR" width="170" height="170" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'grid\'">' +
+            '<div class="pay-qr__soon">' + T.qrSoon + '</div>' +
+            '<small>' + T.scan + '</small>' +
+          '</div>' +
+          '<div class="pay-rows">' +
+            '<div class="pay-row"><span>' + T.account + '</span><b>' + PAY.account + '</b></div>' +
+            '<div class="pay-row"><span>' + T.iban + '</span><b>' + PAY.iban + '</b></div>' +
+            '<div class="pay-row"><span>' + T.amount + '</span><b>' + amount + '</b></div>' +
+            '<div class="pay-row"><span>' + T.msg + '</span><b>' + T.msgVal + '</b></div>' +
+          '</div>' +
         '</div>' +
-        '<div class="kr-modal__view" data-view="done" hidden>' +
-          '<div class="kr-done-ic" aria-hidden="true">✓</div>' +
-          '<h3>' + L.doneTitle + '</h3>' +
-          '<p style="color:var(--text-soft);margin-top:.5rem">' + L.doneText + '</p>' +
-          '<button class="btn btn--ghost" data-close style="margin-top:1.2rem">' + L.close + '</button>' +
-        '</div>' +
+        '<ol class="pay-steps"><li>' + T.s1 + '</li><li>' + T.s2 + '</li><li>' + T.s3 + '</li></ol>' +
+        '<p class="btn-note center">' + T.note + '</p>' +
       '</div>';
     body.appendChild(modal);
-
     modal.addEventListener('click', function (e) {
       if (e.target.hasAttribute('data-close')) closeModal();
-    });
-    var form = modal.querySelector('#krForm');
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var name = form.name.value.trim();
-      var email = form.email.value.trim();
-      if (!name || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
-        if (!name) form.name.focus(); else form.email.focus();
-        return;
-      }
-      // === Sem napoj odeslání na svůj backend / platební bránu ===
-      modal.querySelector('[data-view="form"]').hidden = true;
-      modal.querySelector('[data-view="done"]').hidden = false;
     });
     return modal;
   }
@@ -190,7 +191,7 @@
     lastFocus = doc.activeElement;
     modal.classList.add('open');
     body.style.overflow = 'hidden';
-    var first = modal.querySelector('input, button');
+    var first = modal.querySelector('.kr-modal__close');
     if (first) setTimeout(function () { first.focus(); }, 60);
   }
   function closeModal() {
@@ -200,7 +201,7 @@
       if (lastFocus) lastFocus.focus();
     }
   }
-  // Hook up the final order button(s)
+  // Hook up the order button(s)
   doc.querySelectorAll('#orderBtn, [data-order]').forEach(function (btn) {
     btn.addEventListener('click', function (e) { e.preventDefault(); openModal(); });
   });

@@ -222,6 +222,26 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizolovy-koktejl.html"/>
   </url>
 
+  <!-- O mně / About -->
+  <url>
+    <loc>https://kortizolreset.cz/o-mne.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/o-mne.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/o-mne.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/en/about.html</loc>
+    <lastmod>2026-06-19</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/o-mne.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/about.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/o-mne.html"/>
+  </url>
+
   <!-- Právní stránky -->
   <url>
     <loc>https://kortizolreset.cz/obchodni-podminky.html</loc>

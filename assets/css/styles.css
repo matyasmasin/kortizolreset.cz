@@ -789,3 +789,26 @@ body.nav-open .nav-toggle span::after { top: 0; transform: rotate(-45deg); }
 .answer-box p { margin: 0.3rem 0 0; color: var(--sage-ink); }
 .post-body .faq { margin: 1rem 0 0; }
 .post-body .faq-item summary { font-size: var(--step-1); }
+/* Article hero, TOC, references, author bio, related */
+.post-hero { border-radius: var(--r); overflow: hidden; aspect-ratio: 16/8; margin: 0 0 1.6rem; background: linear-gradient(150deg, var(--sand), var(--sage) 130%); }
+.post-hero img { width: 100%; height: 100%; object-fit: cover; }
+.post-hero img.img-failed { opacity: 0; }
+.post-toc { background: var(--cream-deep); border-radius: var(--r); padding: 1rem 1.3rem; margin: 0 0 1.7rem; }
+.post-toc b { color: var(--sage-deep); font-size: var(--step--1); }
+.post-toc ol { margin: 0.5rem 0 0; padding-left: 1.2rem; display: grid; gap: 0.3rem; }
+.post-toc a { color: var(--clay); }
+.post-refs { margin-top: 2rem; background: var(--cream-deep); border-radius: var(--r); padding: 1.1rem 1.3rem; font-size: var(--step--1); }
+.post-refs b { color: var(--sage-deep); }
+.post-refs ul { list-style: none; padding: 0; margin: 0.5rem 0 0; display: grid; gap: 0.4rem; }
+.post-refs a { color: var(--clay); text-decoration: underline; word-break: break-word; }
+.author-bio { display: flex; gap: 1rem; align-items: flex-start; margin-top: 1.8rem; background: var(--white); border: 1px solid var(--line); border-radius: var(--r); padding: 1.1rem 1.3rem; }
+.author-bio .ab-avatar { width: 54px; height: 54px; border-radius: 50%; flex: none; display: grid; place-items: center; font-family: var(--font-display); font-weight: 700; color: #fff; background: linear-gradient(150deg, var(--sage), var(--sage-deep)); overflow: hidden; }
+.author-bio .ab-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.author-bio b { color: var(--sage-ink); }
+.author-bio p { margin: 0.3rem 0 0; color: var(--text-soft); font-size: var(--step--1); }
+.author-bio a { color: var(--clay); font-weight: 700; }
+.related { margin-top: 2rem; }
+.related h2 { font-size: var(--step-2); margin-bottom: 0.8rem; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 0.9rem; }
+.related-grid a { display: block; background: var(--white); border: 1px solid var(--line); border-radius: var(--r-sm); padding: 0.9rem 1rem; color: var(--sage-ink); font-weight: 600; font-size: var(--step--1); transition: 0.2s; }
+.related-grid a:hover { border-color: var(--sage); color: var(--clay); transform: translateY(-2px); }

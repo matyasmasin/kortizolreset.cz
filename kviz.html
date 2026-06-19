@@ -91,6 +91,7 @@
     </div>
   </footer>
 
+  <script src="assets/js/forms.js"></script>
   <script>
   (function(){
     // each Q: [text, category]
@@ -181,11 +182,14 @@
         e.preventDefault();
         var email = f.email.value.trim();
         if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ f.email.focus(); return; }
-        /* === Sem napoj sběr e-mailů (Ecomail / Mailchimp / SmartEmailing) === */
-        f.style.display='none';
-        document.getElementById('qafter').innerHTML =
-          '<p style="color:var(--sage-deep);font-weight:700">Díky! 💌 Výsledek a plán ti posílám na e-mail.</p>' +
-          '<div class="q-discount">🎁 Bonus za vyplnění: kód <b>RESET10</b> na <b>−10 %</b> na Kortizol Reset.</div>';
+        var btn = f.querySelector('button[type=submit]'); if(btn){ btn.disabled=true; btn.textContent='Posílám…'; }
+        var done = function(){
+          f.style.display='none';
+          document.getElementById('qafter').innerHTML =
+            '<p style="color:var(--sage-deep);font-weight:700">Díky! 💌 Výsledek a plán ti posílám na e-mail.</p>' +
+            '<div class="q-discount">🎁 Bonus za vyplnění: kód <b>RESET10</b> na <b>−10 %</b> na Kortizol Reset.</div>';
+        };
+        (window.krSubmitEmail ? window.krSubmitEmail(email, {source:'kviz-cz', type:t.name}) : Promise.resolve({})).then(done, done);
       });
     }
     intro();

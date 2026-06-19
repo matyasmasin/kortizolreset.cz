@@ -125,6 +125,14 @@ Nahraj obsah složky (kromě `.github/`, `.claude/`, `README.md`, `.git`) do web
 ### `.htaccess`
 V repu je `.htaccess` (vynucení HTTPS, www → bez www, vlastní 404, cache, komprese) — nahraje se do kořene s ostatními soubory.
 
+## 📧 Sběr e-mailů z kvízu (lead magnet)
+
+Kvíz (`kviz.html` / `en/quiz.html`) sbírá e-maily přes `assets/js/forms.js` — staticky, bez serveru.
+
+**Napojení (~1 min):** na [web3forms.com](https://web3forms.com) si zdarma vygeneruj „Access Key" (stačí e-mail) a vlož ho do `CFG.accessKey` v [assets/js/forms.js](assets/js/forms.js). Od té chvíle ti leady chodí na e-mail (a jdou napojit i na Ecomail přes webhook). Alternativy — **Ecomail** formulář (`provider: 'custom'` + jeho action URL) nebo **Formsubmit** (jen e-mail) — jsou popsané přímo v `forms.js`.
+
+Dokud klíč nevyplníš, kvíz funguje dál (ukáže poděkování i slevu), jen se e-mail nikam neodešle. Slevový kód **RESET10** se zobrazí po odeslání; aby reálně platil, nastav ho ve své **platební bráně** (až ji napojíš).
+
 ## 🔎 SEO / GEO soubory
 
 - `robots.txt` – povoluje běžné i AI crawlery (GPTBot, ClaudeBot, PerplexityBot, Google-Extended…) + odkaz na sitemapu

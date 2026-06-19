@@ -91,6 +91,7 @@
     </div>
   </footer>
 
+  <script src="../assets/js/forms.js"></script>
   <script>
   (function(){
     var Q = [
@@ -179,11 +180,14 @@
         e.preventDefault();
         var email = f.email.value.trim();
         if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)){ f.email.focus(); return; }
-        /* === Hook up e-mail capture here (Ecomail / Mailchimp / SmartEmailing) === */
-        f.style.display='none';
-        document.getElementById('qafter').innerHTML =
-          '<p style="color:var(--sage-deep);font-weight:700">Thank you! 💌 Your result and plan are on the way to your inbox.</p>' +
-          '<div class="q-discount">🎁 A bonus for finishing: code <b>RESET10</b> for <b>−10%</b> off Cortisol Reset.</div>';
+        var btn = f.querySelector('button[type=submit]'); if(btn){ btn.disabled=true; btn.textContent='Sending…'; }
+        var done = function(){
+          f.style.display='none';
+          document.getElementById('qafter').innerHTML =
+            '<p style="color:var(--sage-deep);font-weight:700">Thank you! 💌 Your result and plan are on the way to your inbox.</p>' +
+            '<div class="q-discount">🎁 A bonus for finishing: code <b>RESET10</b> for <b>−10%</b> off Cortisol Reset.</div>';
+        };
+        (window.krSubmitEmail ? window.krSubmitEmail(email, {source:'quiz-en', type:t.name}) : Promise.resolve({})).then(done, done);
       });
     }
     intro();

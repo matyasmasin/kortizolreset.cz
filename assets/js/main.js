@@ -6,6 +6,8 @@
   'use strict';
   var doc = document;
   var body = doc.body;
+  var LANG = (doc.documentElement.getAttribute('lang') || 'cs').toLowerCase().slice(0, 2);
+  var EN = LANG === 'en';
 
   /* ----- Year in footer ------------------------------------------------- */
   var yearEl = doc.getElementById('year');
@@ -111,9 +113,46 @@
   }
   if (counters.length) { tickCountdown(); setInterval(tickCountdown, 1000); }
 
+  /* ----- Recipe helpers: servings, checklist and print ----------------- */
+  doc.querySelectorAll('[data-servings]').forEach(function (control) {
+    var sheet = control.closest('.recipe-sheet');
+    if (!sheet) return;
+    var base = parseInt(control.getAttribute('data-base-servings') || '2', 10);
+    var current = base;
+    var output = control.querySelector('[data-servings-value]');
+    var decrease = control.querySelector('[data-servings-decrease]');
+    var increase = control.querySelector('[data-servings-increase]');
+    var amounts = sheet.querySelectorAll('[data-amount]');
+    var formatter = new Intl.NumberFormat(EN ? 'en-GB' : 'cs-CZ', { maximumFractionDigits: 1 });
+
+    function formatAmount(value) {
+      var rounded = Math.round(value * 100) / 100;
+      var whole = Math.floor(rounded);
+      var fraction = Math.round((rounded - whole) * 100) / 100;
+      var glyphs = { '0.25': '¼', '0.5': '½', '0.75': '¾' };
+      if (glyphs[String(fraction)]) return (whole ? whole + ' ' : '') + glyphs[String(fraction)];
+      return formatter.format(rounded);
+    }
+
+    function renderServings() {
+      if (output) output.textContent = current + (EN ? (current === 1 ? ' serving' : ' servings') : (current === 1 ? ' porce' : current < 5 ? ' porce' : ' porcí'));
+      amounts.forEach(function (amount) {
+        var baseAmount = parseFloat(amount.getAttribute('data-amount'));
+        if (!isNaN(baseAmount)) amount.textContent = formatAmount(baseAmount * current / base);
+      });
+      if (decrease) decrease.disabled = current <= 1;
+      if (increase) increase.disabled = current >= 8;
+    }
+    if (decrease) decrease.addEventListener('click', function () { if (current > 1) { current -= 1; renderServings(); } });
+    if (increase) increase.addEventListener('click', function () { if (current < 8) { current += 1; renderServings(); } });
+    renderServings();
+  });
+
+  doc.querySelectorAll('[data-print-recipe]').forEach(function (button) {
+    button.addEventListener('click', function () { window.print(); });
+  });
+
   /* ----- Order / payment modal ----------------------------------------- */
-  var LANG = (doc.documentElement.getAttribute('lang') || 'cs').toLowerCase().slice(0, 2);
-  var EN = LANG === 'en';
 
   /* === PLATEBNÍ ÚDAJE — DOPLŇ po dodání čísla účtu ===
      account: číslo účtu (např. 123456789/0100)

@@ -222,6 +222,62 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/blog/kortizolovy-koktejl.html"/>
   </url>
 
+  <!-- Recepty / Recipes -->
+  <url>
+    <loc>https://kortizolreset.cz/recepty/quinoa-bowl-s-avokadem.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/recepty/quinoa-bowl-s-avokadem.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/recipes/quinoa-avocado-bowl.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/recepty/quinoa-bowl-s-avokadem.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/en/recipes/quinoa-avocado-bowl.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/recepty/quinoa-bowl-s-avokadem.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/recipes/quinoa-avocado-bowl.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/recepty/quinoa-bowl-s-avokadem.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/recepty/losos-s-pecenou-zeleninou.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/recepty/losos-s-pecenou-zeleninou.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/recipes/salmon-with-roasted-vegetables.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/recepty/losos-s-pecenou-zeleninou.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/en/recipes/salmon-with-roasted-vegetables.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/recepty/losos-s-pecenou-zeleninou.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/recipes/salmon-with-roasted-vegetables.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/recepty/losos-s-pecenou-zeleninou.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/recepty/proteinova-snidane-bez-vykyvu.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/recepty/proteinova-snidane-bez-vykyvu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/recipes/protein-breakfast-bowl.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/recepty/proteinova-snidane-bez-vykyvu.html"/>
+  </url>
+  <url>
+    <loc>https://kortizolreset.cz/en/recipes/protein-breakfast-bowl.html</loc>
+    <lastmod>2026-07-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://kortizolreset.cz/recepty/proteinova-snidane-bez-vykyvu.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kortizolreset.cz/en/recipes/protein-breakfast-bowl.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://kortizolreset.cz/recepty/proteinova-snidane-bez-vykyvu.html"/>
+  </url>
+
   <!-- O mně / About -->
   <url>
     <loc>https://kortizolreset.cz/o-mne.html</loc>
